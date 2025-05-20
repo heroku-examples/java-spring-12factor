@@ -212,7 +212,7 @@ section.app-intro-slide .image-content {
 
 section.app-intro-slide .image-content img {
   max-width: 100%;
-  max-height: 60vh; /* Slightly reduced */
+  max-height: 100vh; /* Slightly reduced */
   object-fit: contain;
   border: 1px solid #ccc;
 }
@@ -254,7 +254,7 @@ section.section-title-slide .logo-container {
 section.section-title-slide .logo-container img,
 section.section-title-slide .logo-container svg {
   max-width: 60%; /* Max width for each logo within the container */
-  max-height: 25vh; /* Max height for logos */
+  max-height: 50vh; /* Max height for logos */
   object-fit: contain;
   background:white;
 }
@@ -833,9 +833,10 @@ Speaker Notes:
 ---
 
 <!-- _class: section-title-slide -->
-## Twelve-Factor Principles
-### with Spring Boot
+## Twelve-Factor Principles 
+## with Spring Boot
 
+<p></p>
 <div class="logo-container">
   <img src="images/slide11_12factor_logo.png" alt="Twelve-Factor App Logo">
   <img src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo">
