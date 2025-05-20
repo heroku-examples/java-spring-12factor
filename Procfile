@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -Dspring.profiles.active=prod -jar target/twelvefactor-notepad-0.0.1-SNAPSHOT.jar 

@@ -1,0 +1,306 @@
+.navbar {
+    background-color: #1a1a1a !important;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.8) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fff !important;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255,255,255,.1);
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.jumbotron {
+    background: #532F8C;
+    color: white;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.jumbotron .btn-primary {
+    background: #845ac7;
+    border-color: #845ac7;
+}
+
+.jumbotron .btn-primary:hover {
+    background: #7646c1;
+}
+
+.jumbotron p {
+    color: #d9ccee;
+    max-width: 75%;
+    margin: 1em auto 2em;
+}
+
+.navbar + .jumbotron {
+    margin-top: -20px;
+}
+
+.jumbotron .lang-logo {
+    display: block;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: auto auto 1em auto;
+    border: 2px solid white;
+}
+
+.jumbotron .lang-logo img {
+    max-width: 100%;
+}
+
+.note-container {
+    position: relative;
+    min-height: 100vh;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+.note {
+    position: absolute;
+    width: 250px;
+    min-height: 250px;
+    padding: 15px;
+    margin: 10px;
+    background: #ffd700;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    z-index: 1;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.note:hover {
+    transform: scale(1.02);
+    z-index: 1000;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.175);
+}
+
+.note-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 5px;
+}
+
+.drag-handle {
+    cursor: move;
+    padding: 0 8px;
+    color: rgba(0,0,0,0.3);
+    font-size: 16px;
+    user-select: none;
+}
+
+.drag-handle:hover {
+    color: rgba(0,0,0,0.5);
+}
+
+.note-title {
+    font-weight: bold;
+    flex-grow: 1;
+    cursor: text;
+    outline: none;
+    user-select: text;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.note-title:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.note-content {
+    min-height: 150px;
+    outline: none;
+    cursor: text;
+    user-select: text;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 5px;
+    width: 100%;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.note-content:focus {
+    outline: none;
+}
+
+.note-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.note:hover .note-actions {
+    opacity: 1;
+}
+
+.note-actions button,
+.close-btn {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.note-actions button:hover,
+.close-btn:hover {
+    opacity: 1;
+}
+
+.add-note-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #007bff;
+    color: white;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-note-btn:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+.note.dragging {
+    z-index: 1000;
+    opacity: 0.8;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.25);
+}
+
+html {
+  font-size: 14px;
+  position: relative;
+  min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.footer {
+    background-color: #343a40;
+    color: rgba(255,255,255,.8);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: #dee2e6;
+    text-decoration: none;
+}
+
+.app-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.note-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.note-controls .delete-btn {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.note-controls .delete-btn:hover {
+    opacity: 1;
+}
+
+.color-palette {
+    display: flex;
+    align-items: center;
+}
+
+.color-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-left: 6px;
+    cursor: pointer;
+    border: 1px solid #b0b0b0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: transform 0.1s ease-in-out;
+}
+
+.color-circle:hover {
+    transform: scale(1.15);
+}
+
+.note-timestamp {
+    font-size: 0.75em;
+    color: #0e0e0e;
+    text-align: right;
+    margin-top: 8px;
+    width: 100%;
+} 
