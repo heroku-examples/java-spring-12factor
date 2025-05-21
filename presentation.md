@@ -212,7 +212,7 @@ section.app-intro-slide .image-content {
 
 section.app-intro-slide .image-content img {
   max-width: 100%;
-  max-height: 60vh; /* Slightly reduced */
+  max-height: 100vh; /* Slightly reduced */
   object-fit: contain;
   border: 1px solid #ccc;
 }
@@ -254,7 +254,7 @@ section.section-title-slide .logo-container {
 section.section-title-slide .logo-container img,
 section.section-title-slide .logo-container svg {
   max-width: 60%; /* Max width for each logo within the container */
-  max-height: 25vh; /* Max height for logos */
+  max-height: 50vh; /* Max height for logos */
   object-fit: contain;
   background:white;
 }
@@ -833,9 +833,10 @@ Speaker Notes:
 ---
 
 <!-- _class: section-title-slide -->
-## Twelve-Factor Principles
-### with Spring Boot
+## Twelve-Factor Principles 
+## with Spring Boot
 
+<p></p>
 <div class="logo-container">
   <img src="images/slide11_12factor_logo.png" alt="Twelve-Factor App Logo">
   <img src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo">
@@ -849,7 +850,7 @@ Speaker Notes:
 
 <!-- _class: factor-slide factor-config-slide -->
 <div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">III</span>Config</span>
+  <span class="factor-bar-title"><span class="factor-number">3</span>Config</span>
   <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
 </div>
 
@@ -884,7 +885,7 @@ Speaker Notes:
 
 <!-- _class: factor-slide factor-config-slide code-slide -->
 <div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">III</span>Config</span>
+  <span class="factor-bar-title"><span class="factor-number">3</span>Config</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -918,9 +919,59 @@ Speaker Notes:
 
 ---
 
+<!-- _class: factor-slide factor-secrets-slide -->
+<div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">3</span>Config: Managing Secrets</span>
+  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
+</div>
+
+*   **Principle (Factor III – Config):** Never hardcode secrets (API keys, passwords, tokens) in code or config files.
+*   **Externalize all secrets:** Use environment variables or secret management tools.
+*   **Why?**
+    *   Prevent accidental exposure (e.g., in source control).
+    *   Enable safe rotation and updates.
+    *   Meet security and compliance requirements.
+
+<!-- Speaker Notes:
+"This guidance comes directly from Factor III—Config—of the Twelve-Factor methodology, which states that all configuration, including secrets, must be stored outside the codebase, typically in environment variables.
+
+The rationale is to prevent accidental exposure, enable safe rotation, and meet security and compliance needs. In our sample app, all sensitive values are injected from the environment, never stored in code or checked-in config files."
+-->
+
+---
+
+
+<!-- _class: factor-slide factor-config-slide code-slide -->
+<div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">3</span>Config: Managing Secrets</span>
+  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
+</div>
+
+*   **Environment Variables:** Primary and simplest method.
+    ```java
+    @Value("${MY_SECRET_API_KEY}")
+    private String apiKey;
+    ```
+*   **External Secret Management Systems:**
+    *   Spring Cloud Vault (HashiCorp), AWS Secrets Manager
+*   **Encrypted Properties (e.g., Jasypt Spring Boot):**
+    *   For encrypting values at rest in properties files.
+
+<!-- Speaker Notes:
+"Spring Boot makes it easy to follow the Twelve-Factor principle for secrets. The most direct approach is to use environment variables, which Spring can inject into your code using the `@Value` annotation. In the example shown, the value of `MY_SECRET_API_KEY` is injected from the environment or config into the `apiKey` field. This keeps secrets out of your codebase and allows for easy rotation and management."
+
+"For more advanced needs, Spring Boot integrates with secret management systems like HashiCorp Vault, AWS Secrets Manager, and Azure Key Vault—often via Spring Cloud extensions. These tools provide secure storage, access control, and auditability for secrets."
+
+"If you must store secrets in properties files, libraries like Jasypt allow you to encrypt those values at rest, but environment variables or secret managers are preferred."
+
+"In our sample app, all sensitive values are injected from the environment, never hardcoded or checked into source control, fully aligning with Factor III of the Twelve-Factor methodology."
+-->
+
+---
+
 <!-- _class: factor-slide factor-backing-services-slide -->
 <div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
 </div>
 
@@ -946,7 +997,7 @@ Speaker Notes:
 
 <!-- _class: factor-slide factor-config-slide code-slide -->
 <div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -978,7 +1029,7 @@ Speaker Notes:
 
 <!-- _class: factor-slide factor-config-slide code-slide -->
 <div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -1009,7 +1060,7 @@ Speaker Notes:
 
 <!-- _class: factor-slide factor-config-slide code-slide -->
 <div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -1038,7 +1089,7 @@ Speaker Notes:
 
 <!-- _class: factor-slide factor-config-slide code-slide -->
 <div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -1062,9 +1113,176 @@ Speaker Notes:
 
 ---
 
+<!-- _class: factor-slide factor-build-release-run-slide -->
+<div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">5</span>Build, Release, Run</span>
+  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
+</div>
+
+## Strict Separation
+
+*   **Build Stage:** Code → Executable artifact (e.g., JAR/WAR). No environment-specific config.
+*   **Release Stage:** Combine build artifact with config for a specific environment.
+*   **Run Stage:** Execute the release in the target environment.
+*   **Why?**
+    *   Reliable, repeatable deployments.
+    *   Easier rollbacks & debugging and CI/CD.
+
+<!-- Speaker Notes:
+"The Build, Release, Run principle requires a strict separation between these three stages. The build stage produces a deployable artifact from your code, with no environment-specific configuration baked in.
+
+The release stage combines this artifact with the configuration for a specific environment—such as database URLs or API keys—creating a unique release.
+
+The run stage is where the release is executed in the target environment, using the injected config.
+
+This separation ensures that builds are repeatable and reliable, and that you can promote the same artifact through multiple environments (dev, staging, prod) simply by changing the config. It also makes rollbacks and debugging much easier.
+
+In our sample app, we use Maven to build a JAR, inject config at release/run time, and can deploy the same artifact to any environment, fully aligned with this principle."
+-->
+
+---
+
+
+<!-- _class: factor-slide factor-config-slide code-slide -->
+<div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">5</span>Build, Release, Run</span>
+  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
+</div>
+
+<!-- _class: factor-slide factor-build-release-run-slide -->
+
+*   **Build:** Use Maven/Gradle to create a JAR/WAR (`mvn package`).
+*   **Release:** Package artifact in a Docker image (optional), config supplied at runtime.
+*   **Run:** Deploy the same artifact to any environment (dev, staging, prod).
+*   **CI/CD:** Automate with GitHub Actions, Jenkins, etc.
+*   **Sample App:** Build with Maven, config injected at run time, deploy anywhere.
+
+<!-- Speaker Notes:
+"Spring Boot makes it easy to follow the Build, Release, Run principle. We use Maven or Gradle to build a deployable JAR or WAR file, with no environment-specific config included.
+
+For the release stage, we can package this artifact in a Docker image, or simply deploy the JAR as-is. Configuration—such as database URLs or API keys—is always supplied at runtime, never baked into the build.
+
+The run stage is where we execute the release in the target environment, using the injected config. This means we can promote the same artifact through dev, staging, and production, ensuring consistency and reliability.
+
+Our sample app uses Maven for builds, can be containerized with Docker, and receives its config at runtime, so it can be deployed to any environment with confidence. CI/CD pipelines like GitHub Actions or Jenkins automate these steps for repeatable, hands-off deployments."
+-->
+
+---
+
+<!-- _class: factor-slide factor-processes-slide -->
+<div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">6</span>Processes</span>
+  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
+</div>
+
+## Execute as Stateless Processes
+
+*   **Principle:** Run as one or more stateless, independent processes.
+    *   "Share-nothing"—no local or shared state.
+    *   Persistent data lives in **backing services** (DB, Redis, etc).
+*   **Why?**
+    *   Enables horizontal scaling.
+    *   Improves resilience and recovery.
+
+<!-- Speaker Notes:
+"The 'Processes' factor in the Twelve-Factor methodology emphasizes that applications should run as one or more stateless processes. This means each process is independent and does not rely on shared memory or local state.
+
+Any data that needs to persist—such as user sessions, files, or application state—should be stored in a backing service like a database or cache, not in the process itself.
+
+This approach enables true horizontal scalability: you can add or remove instances at will, and the system remains robust because no single process is critical for holding state. If a process fails, it can be replaced instantly without data loss.
+
+In our sample app, all persistent data (notes, sessions) is stored in backing services, so any app instance can be started, stopped, or replaced at any time."
+-->
+
+---
+
+
+<!-- _class: factor-slide factor-config-slide code-slide -->
+<div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">6</span>Processes</span>
+  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
+</div>
+
+<!-- _class: factor-slide factor-processes-slide -->
+
+*   **Stateless by default:** REST APIs and controllers do not store user/session state in memory.
+*   **Session state (if needed):** Use external stores (e.g., Redis, JDBC) via Spring Session.
+    *   Our sample app uses Redis for real-time collaboration and can be configured for session storage.
+*   **Avoid:** Storing critical data in local memory or on disk—use backing services.
+
+<!-- Speaker Notes:
+"Spring Boot applications are generally stateless by design, especially when building REST APIs. This means each request is handled independently, and no user or session state is kept in memory between requests.
+
+When session state is required—for example, for user authentication or collaborative features—Spring Boot makes it easy to externalize that state using Spring Session. In our sample app, Redis is used for real-time collaboration and can also be configured to store session data, ensuring that all state is managed outside the application process.
+
+This approach allows you to scale your app horizontally, add or remove instances at will, and recover quickly from failures, since no critical data is lost if a process is restarted or replaced.
+
+The key takeaway: always use backing services for persistent or shared state, never rely on in-memory or local storage."
+-->
+
+---
+
+<!-- _class: factor-slide factor-disposability-slide -->
+<div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">9</span>Disposability</span>
+  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
+</div>
+
+## Fast Startup, Graceful Shutdown
+
+*   **Principle:** Processes are disposable—start and stop quickly, no reliance on local state.
+*   **Why?**
+    *   Enables elastic scaling and rapid deployments.
+    *   Robustness: failed instances can be replaced instantly.
+    *   Supports cloud-native and orchestrated environments.
+
+<!-- Speaker Notes:
+"The Disposability principle means that application processes should be able to start up and shut down quickly and gracefully, without relying on any local state.
+
+This is essential for modern cloud-native environments, where applications are frequently scaled up or down, restarted, or replaced by orchestrators like Kubernetes.
+
+Fast startup and graceful shutdown enable rapid deployments, elastic scaling, and robust recovery from failures. If a process crashes or needs to be replaced, it can be done instantly, with no risk of data loss or inconsistent state.
+
+In our sample app, we ensure that all state is stored in backing services, so any instance can be started, stopped, or replaced at any time, fully aligned with this principle."
+-->
+
+---
+
+
+<!-- _class: factor-slide factor-config-slide code-slide -->
+<div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">9</span>Disposability</span>
+  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
+</div>
+
+<!-- _class: factor-slide factor-disposability-slide -->
+
+*   **Fast Startup:** Spring Boot optimized for quick startup; Spring Native (GraalVM) for even faster boot.
+*   **Graceful Shutdown:** Actuator `/actuator/shutdown` endpoint, handles in-flight requests.
+*   **Health Probes:** Actuator `/actuator/health` for liveness/readiness (Kubernetes, cloud platforms).
+*   **Included in NotesApp App:**
+    ```xml
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    ```
+
+<!-- Speaker Notes:
+"Spring Boot provides several features that make applications highly disposable. Fast startup is a core design goal, and with Spring Native and GraalVM, you can achieve even faster boot times for cloud-native deployments.
+
+Graceful shutdown is supported out of the box via the Actuator `/actuator/shutdown` endpoint, which ensures that in-flight requests are handled before the process exits.
+
+Health probes, such as `/actuator/health`, are essential for orchestrators like Kubernetes to determine when an app is ready to receive traffic or needs to be restarted.
+
+Enabling Actuator in your Spring Boot app is as simple as adding the `spring-boot-starter-actuator` dependency to your `pom.xml` and exposing the relevant endpoints in your `application.properties` file, as shown here.
+
+In our sample app, Actuator is enabled, making it easy to integrate with cloud platforms and orchestrators, and ensuring that any instance can be started, stopped, or replaced at any time."
+-->
+
+---
+
 <!-- _class: factor-slide factor-dev-prod-parity-slide -->
 <div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">X</span>Dev/Prod Parity</span>
+  <span class="factor-bar-title"><span class="factor-number">10</span>Dev/Prod Parity</span>
   <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
 </div>
 
@@ -1103,7 +1321,7 @@ Speaker Notes:
 
 <!-- _class: factor-slide factor-config-slide code-slide -->
 <div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">X</span>Dev/Prod Parity</span>
+  <span class="factor-bar-title"><span class="factor-number">10</span>Dev/Prod Parity</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -1141,226 +1359,9 @@ Speaker Notes:
 
 ---
 
-<!-- _class: factor-slide factor-secrets-slide -->
-<div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">III</span>Config: Managing Secrets</span>
-  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
-</div>
-
-*   **Principle (Factor III – Config):** Never hardcode secrets (API keys, passwords, tokens) in code or config files.
-*   **Externalize all secrets:** Use environment variables or secret management tools.
-*   **Why?**
-    *   Prevent accidental exposure (e.g., in source control).
-    *   Enable safe rotation and updates.
-    *   Meet security and compliance requirements.
-
-<!-- Speaker Notes:
-"This guidance comes directly from Factor III—Config—of the Twelve-Factor methodology, which states that all configuration, including secrets, must be stored outside the codebase, typically in environment variables.
-
-The rationale is to prevent accidental exposure, enable safe rotation, and meet security and compliance needs. In our sample app, all sensitive values are injected from the environment, never stored in code or checked-in config files."
--->
-
----
-
-
-<!-- _class: factor-slide factor-config-slide code-slide -->
-<div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">III</span>Config: Managing Secrets</span>
-  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
-</div>
-
-*   **Environment Variables:** Primary and simplest method.
-    ```java
-    @Value("${MY_SECRET_API_KEY}")
-    private String apiKey;
-    ```
-*   **External Secret Management Systems:**
-    *   Spring Cloud Vault (HashiCorp), AWS Secrets Manager
-*   **Encrypted Properties (e.g., Jasypt Spring Boot):**
-    *   For encrypting values at rest in properties files.
-
-<!-- Speaker Notes:
-"Spring Boot makes it easy to follow the Twelve-Factor principle for secrets. The most direct approach is to use environment variables, which Spring can inject into your code using the `@Value` annotation. In the example shown, the value of `MY_SECRET_API_KEY` is injected from the environment or config into the `apiKey` field. This keeps secrets out of your codebase and allows for easy rotation and management."
-
-"For more advanced needs, Spring Boot integrates with secret management systems like HashiCorp Vault, AWS Secrets Manager, and Azure Key Vault—often via Spring Cloud extensions. These tools provide secure storage, access control, and auditability for secrets."
-
-"If you must store secrets in properties files, libraries like Jasypt allow you to encrypt those values at rest, but environment variables or secret managers are preferred."
-
-"In our sample app, all sensitive values are injected from the environment, never hardcoded or checked into source control, fully aligning with Factor III of the Twelve-Factor methodology."
--->
-
----
-
-<!-- _class: factor-slide factor-processes-slide -->
-<div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">VI</span>Processes</span>
-  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
-</div>
-
-## Execute as Stateless Processes
-
-*   **Principle:** Run as one or more stateless, independent processes.
-    *   "Share-nothing"—no local or shared state.
-    *   Persistent data lives in **backing services** (DB, Redis, etc).
-*   **Why?**
-    *   Enables horizontal scaling.
-    *   Improves resilience and recovery.
-
-<!-- Speaker Notes:
-"The 'Processes' factor in the Twelve-Factor methodology emphasizes that applications should run as one or more stateless processes. This means each process is independent and does not rely on shared memory or local state.
-
-Any data that needs to persist—such as user sessions, files, or application state—should be stored in a backing service like a database or cache, not in the process itself.
-
-This approach enables true horizontal scalability: you can add or remove instances at will, and the system remains robust because no single process is critical for holding state. If a process fails, it can be replaced instantly without data loss.
-
-In our sample app, all persistent data (notes, sessions) is stored in backing services, so any app instance can be started, stopped, or replaced at any time."
--->
-
----
-
-
-<!-- _class: factor-slide factor-config-slide code-slide -->
-<div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">VI</span>Process</span>
-  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
-</div>
-
-<!-- _class: factor-slide factor-processes-slide -->
-
-*   **Stateless by default:** REST APIs and controllers do not store user/session state in memory.
-*   **Session state (if needed):** Use external stores (e.g., Redis, JDBC) via Spring Session.
-    *   Our sample app uses Redis for real-time collaboration and can be configured for session storage.
-*   **Avoid:** Storing critical data in local memory or on disk—use backing services.
-
-<!-- Speaker Notes:
-"Spring Boot applications are generally stateless by design, especially when building REST APIs. This means each request is handled independently, and no user or session state is kept in memory between requests.
-
-When session state is required—for example, for user authentication or collaborative features—Spring Boot makes it easy to externalize that state using Spring Session. In our sample app, Redis is used for real-time collaboration and can also be configured to store session data, ensuring that all state is managed outside the application process.
-
-This approach allows you to scale your app horizontally, add or remove instances at will, and recover quickly from failures, since no critical data is lost if a process is restarted or replaced.
-
-The key takeaway: always use backing services for persistent or shared state, never rely on in-memory or local storage."
--->
-
----
-
-<!-- _class: factor-slide factor-build-release-run-slide -->
-<div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">V</span>Build, Release, Run</span>
-  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
-</div>
-
-## Strict Separation
-
-*   **Build Stage:** Code → Executable artifact (e.g., JAR/WAR). No environment-specific config.
-*   **Release Stage:** Combine build artifact with config for a specific environment.
-*   **Run Stage:** Execute the release in the target environment.
-*   **Why?**
-    *   Reliable, repeatable deployments.
-    *   Easier rollbacks & debugging and CI/CD.
-
-<!-- Speaker Notes:
-"The Build, Release, Run principle requires a strict separation between these three stages. The build stage produces a deployable artifact from your code, with no environment-specific configuration baked in.
-
-The release stage combines this artifact with the configuration for a specific environment—such as database URLs or API keys—creating a unique release.
-
-The run stage is where the release is executed in the target environment, using the injected config.
-
-This separation ensures that builds are repeatable and reliable, and that you can promote the same artifact through multiple environments (dev, staging, prod) simply by changing the config. It also makes rollbacks and debugging much easier.
-
-In our sample app, we use Maven to build a JAR, inject config at release/run time, and can deploy the same artifact to any environment, fully aligned with this principle."
--->
-
----
-
-
-<!-- _class: factor-slide factor-config-slide code-slide -->
-<div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">V</span>Build, Release, Run</span>
-  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
-</div>
-
-<!-- _class: factor-slide factor-build-release-run-slide -->
-
-*   **Build:** Use Maven/Gradle to create a JAR/WAR (`mvn package`).
-*   **Release:** Package artifact in a Docker image (optional), config supplied at runtime.
-*   **Run:** Deploy the same artifact to any environment (dev, staging, prod).
-*   **CI/CD:** Automate with GitHub Actions, Jenkins, etc.
-*   **Sample App:** Build with Maven, config injected at run time, deploy anywhere.
-
-<!-- Speaker Notes:
-"Spring Boot makes it easy to follow the Build, Release, Run principle. We use Maven or Gradle to build a deployable JAR or WAR file, with no environment-specific config included.
-
-For the release stage, we can package this artifact in a Docker image, or simply deploy the JAR as-is. Configuration—such as database URLs or API keys—is always supplied at runtime, never baked into the build.
-
-The run stage is where we execute the release in the target environment, using the injected config. This means we can promote the same artifact through dev, staging, and production, ensuring consistency and reliability.
-
-Our sample app uses Maven for builds, can be containerized with Docker, and receives its config at runtime, so it can be deployed to any environment with confidence. CI/CD pipelines like GitHub Actions or Jenkins automate these steps for repeatable, hands-off deployments."
--->
-
----
-
-<!-- _class: factor-slide factor-disposability-slide -->
-<div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">IX</span>Disposability</span>
-  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
-</div>
-
-## Fast Startup, Graceful Shutdown
-
-*   **Principle:** Processes are disposable—start and stop quickly, no reliance on local state.
-*   **Why?**
-    *   Enables elastic scaling and rapid deployments.
-    *   Robustness: failed instances can be replaced instantly.
-    *   Supports cloud-native and orchestrated environments.
-
-<!-- Speaker Notes:
-"The Disposability principle means that application processes should be able to start up and shut down quickly and gracefully, without relying on any local state.
-
-This is essential for modern cloud-native environments, where applications are frequently scaled up or down, restarted, or replaced by orchestrators like Kubernetes.
-
-Fast startup and graceful shutdown enable rapid deployments, elastic scaling, and robust recovery from failures. If a process crashes or needs to be replaced, it can be done instantly, with no risk of data loss or inconsistent state.
-
-In our sample app, we ensure that all state is stored in backing services, so any instance can be started, stopped, or replaced at any time, fully aligned with this principle."
--->
-
----
-
-
-<!-- _class: factor-slide factor-config-slide code-slide -->
-<div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IX</span>Disposability</span>
-  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
-</div>
-
-<!-- _class: factor-slide factor-disposability-slide -->
-
-*   **Fast Startup:** Spring Boot optimized for quick startup; Spring Native (GraalVM) for even faster boot.
-*   **Graceful Shutdown:** Actuator `/actuator/shutdown` endpoint, handles in-flight requests.
-*   **Health Probes:** Actuator `/actuator/health` for liveness/readiness (Kubernetes, cloud platforms).
-*   **Used NotesApp App:**
-    ```xml
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    ```
-
-<!-- Speaker Notes:
-"Spring Boot provides several features that make applications highly disposable. Fast startup is a core design goal, and with Spring Native and GraalVM, you can achieve even faster boot times for cloud-native deployments.
-
-Graceful shutdown is supported out of the box via the Actuator `/actuator/shutdown` endpoint, which ensures that in-flight requests are handled before the process exits.
-
-Health probes, such as `/actuator/health`, are essential for orchestrators like Kubernetes to determine when an app is ready to receive traffic or needs to be restarted.
-
-Enabling Actuator in your Spring Boot app is as simple as adding the `spring-boot-starter-actuator` dependency to your `pom.xml` and exposing the relevant endpoints in your `application.properties` file, as shown here.
-
-In our sample app, Actuator is enabled, making it easy to integrate with cloud platforms and orchestrators, and ensuring that any instance can be started, stopped, or replaced at any time."
--->
-
----
-
 <!-- _class: factor-slide factor-logs-slide -->
 <div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">XI</span>Logs</span>
+  <span class="factor-bar-title"><span class="factor-number">11</span>Logs</span>
   <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
 </div>
 
@@ -1388,7 +1389,7 @@ In our sample app, you'll see that we rely on the platform and Spring Boot's def
 
 <!-- _class: factor-slide factor-config-slide code-slide -->
 <div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">XI</span>Logs</span>
+  <span class="factor-bar-title"><span class="factor-number">11</span>Logs</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -1501,4 +1502,3 @@ We have some time for questions now. Feel free to ask anything about the Twelve-
 [After Q&A]
 Thank you all for attending! I hope this session was valuable. You can find the sample app and all resources via the QR code on the previous slide. Don't hesitate to reach out if you have further questions.
 -->
-
