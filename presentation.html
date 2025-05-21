@@ -174,7 +174,7 @@
 </div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-marpit-fragments="8" data-paginate="true" data-class="factor-slide factor-config-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-config-slide" data-marpit-pagination="12" style="--paginate:true;--class:factor-slide factor-config-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">III</span>Config</span>
+  <span class="factor-bar-title"><span class="factor-number">3</span>Config</span>
   <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
 </div>
 <h2 id="externalize-configuration">Externalize Configuration</h2>
@@ -196,7 +196,7 @@
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-config-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-config-slide code-slide" data-marpit-pagination="13" style="--paginate:true;--class:factor-slide factor-config-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">III</span>Config</span>
+  <span class="factor-bar-title"><span class="factor-number">3</span>Config</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 <ul>
@@ -212,8 +212,45 @@
 <li data-marpit-fragment="4"><strong>Spring Cloud Config:</strong> Centralized server to manage externalized configuration for distributed applications.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-backing-services-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-backing-services-slide" data-marpit-pagination="14" style="--paginate:true;--class:factor-slide factor-backing-services-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-marpit-fragments="6" data-paginate="true" data-class="factor-slide factor-secrets-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-secrets-slide" data-marpit-pagination="14" style="--paginate:true;--class:factor-slide factor-secrets-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">3</span>Config: Managing Secrets</span>
+  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
+</div>
+<ul>
+<li data-marpit-fragment="1"><strong>Principle (Factor III – Config):</strong> Never hardcode secrets (API keys, passwords, tokens) in code or config files.</li>
+<li data-marpit-fragment="2"><strong>Externalize all secrets:</strong> Use environment variables or secret management tools.</li>
+<li data-marpit-fragment="3"><strong>Why?</strong>
+<ul>
+<li data-marpit-fragment="4">Prevent accidental exposure (e.g., in source control).</li>
+<li data-marpit-fragment="5">Enable safe rotation and updates.</li>
+<li data-marpit-fragment="6">Meet security and compliance requirements.</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-marpit-fragments="5" data-paginate="true" data-class="factor-slide factor-config-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-config-slide code-slide" data-marpit-pagination="15" style="--paginate:true;--class:factor-slide factor-config-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">3</span>Config: Managing Secrets</span>
+  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
+</div>
+<ul>
+<li data-marpit-fragment="1"><strong>Environment Variables:</strong> Primary and simplest method.<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-meta">@Value(&quot;${MY_SECRET_API_KEY}&quot;)</span>
+<span class="hljs-keyword">private</span> String apiKey;
+</code></pre>
+</li>
+<li data-marpit-fragment="2"><strong>External Secret Management Systems:</strong>
+<ul>
+<li data-marpit-fragment="3">Spring Cloud Vault (HashiCorp), AWS Secrets Manager</li>
+</ul>
+</li>
+<li data-marpit-fragment="4"><strong>Encrypted Properties (e.g., Jasypt Spring Boot):</strong>
+<ul>
+<li data-marpit-fragment="5">For encrypting values at rest in properties files.</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-backing-services-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-backing-services-slide" data-marpit-pagination="16" style="--paginate:true;--class:factor-slide factor-backing-services-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
 </div>
 <h2 id="treat-as-attached-resources">Treat as Attached Resources</h2>
@@ -224,8 +261,8 @@
 <li data-marpit-fragment="4"><strong>Flexible Management:</strong> Admins can attach, detach, or scale services independently of the app code.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-marpit-fragments="1" data-paginate="true" data-class="factor-slide factor-backing-services-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-backing-services-slide code-slide" data-marpit-pagination="15" style="--paginate:true;--class:factor-slide factor-backing-services-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-marpit-fragments="1" data-paginate="true" data-class="factor-slide factor-backing-services-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-backing-services-slide code-slide" data-marpit-pagination="17" style="--paginate:true;--class:factor-slide factor-backing-services-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -244,8 +281,8 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-marpit-fragments="2" data-paginate="true" data-class="factor-slide factor-config-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-config-slide code-slide" data-marpit-pagination="16" style="--paginate:true;--class:factor-slide factor-config-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-marpit-fragments="2" data-paginate="true" data-class="factor-slide factor-config-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-config-slide code-slide" data-marpit-pagination="18" style="--paginate:true;--class:factor-slide factor-config-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 <h2 id="auto-configuration-cont">Auto-configuration (cont.)</h2>
@@ -262,8 +299,8 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-marpit-fragments="2" data-paginate="true" data-class="factor-slide factor-backing-services-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-backing-services-slide code-slide" data-marpit-pagination="17" style="--paginate:true;--class:factor-slide factor-backing-services-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-marpit-fragments="2" data-paginate="true" data-class="factor-slide factor-backing-services-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-backing-services-slide code-slide" data-marpit-pagination="19" style="--paginate:true;--class:factor-slide factor-backing-services-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -282,8 +319,8 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-backing-services-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-backing-services-slide" data-marpit-pagination="18" style="--paginate:true;--class:factor-slide factor-backing-services-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IV</span>Backing Services</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-backing-services-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-backing-services-slide" data-marpit-pagination="20" style="--paginate:true;--class:factor-slide factor-backing-services-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">4</span>Backing Services</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -298,8 +335,104 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-marpit-fragments="6" data-paginate="true" data-class="factor-slide factor-dev-prod-parity-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-dev-prod-parity-slide" data-marpit-pagination="19" style="--paginate:true;--class:factor-slide factor-dev-prod-parity-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">X</span>Dev/Prod Parity</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-marpit-fragments="6" data-paginate="true" data-class="factor-slide factor-build-release-run-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-build-release-run-slide" data-marpit-pagination="21" style="--paginate:true;--class:factor-slide factor-build-release-run-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">5</span>Build, Release, Run</span>
+  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
+</div>
+<h2 id="strict-separation">Strict Separation</h2>
+<ul>
+<li data-marpit-fragment="1"><strong>Build Stage:</strong> Code → Executable artifact (e.g., JAR/WAR). No environment-specific config.</li>
+<li data-marpit-fragment="2"><strong>Release Stage:</strong> Combine build artifact with config for a specific environment.</li>
+<li data-marpit-fragment="3"><strong>Run Stage:</strong> Execute the release in the target environment.</li>
+<li data-marpit-fragment="4"><strong>Why?</strong>
+<ul>
+<li data-marpit-fragment="5">Reliable, repeatable deployments.</li>
+<li data-marpit-fragment="6">Easier rollbacks &amp; debugging and CI/CD.</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-marpit-fragments="5" data-paginate="true" data-class="factor-slide factor-build-release-run-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-build-release-run-slide" data-marpit-pagination="22" style="--paginate:true;--class:factor-slide factor-build-release-run-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">5</span>Build, Release, Run</span>
+  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
+</div>
+
+<ul>
+<li data-marpit-fragment="1"><strong>Build:</strong> Use Maven/Gradle to create a JAR/WAR (<code>mvn package</code>).</li>
+<li data-marpit-fragment="2"><strong>Release:</strong> Package artifact in a Docker image (optional), config supplied at runtime.</li>
+<li data-marpit-fragment="3"><strong>Run:</strong> Deploy the same artifact to any environment (dev, staging, prod).</li>
+<li data-marpit-fragment="4"><strong>CI/CD:</strong> Automate with GitHub Actions, Jenkins, etc.</li>
+<li data-marpit-fragment="5"><strong>Sample App:</strong> Build with Maven, config injected at run time, deploy anywhere.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-marpit-fragments="6" data-paginate="true" data-class="factor-slide factor-processes-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-processes-slide" data-marpit-pagination="23" style="--paginate:true;--class:factor-slide factor-processes-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">6</span>Processes</span>
+  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
+</div>
+<h2 id="execute-as-stateless-processes">Execute as Stateless Processes</h2>
+<ul>
+<li data-marpit-fragment="1"><strong>Principle:</strong> Run as one or more stateless, independent processes.
+<ul>
+<li data-marpit-fragment="2">&quot;Share-nothing&quot;—no local or shared state.</li>
+<li data-marpit-fragment="3">Persistent data lives in <strong>backing services</strong> (DB, Redis, etc).</li>
+</ul>
+</li>
+<li data-marpit-fragment="4"><strong>Why?</strong>
+<ul>
+<li data-marpit-fragment="5">Enables horizontal scaling.</li>
+<li data-marpit-fragment="6">Improves resilience and recovery.</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-processes-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-processes-slide" data-marpit-pagination="24" style="--paginate:true;--class:factor-slide factor-processes-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">6</span>Processes</span>
+  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
+</div>
+
+<ul>
+<li data-marpit-fragment="1"><strong>Stateless by default:</strong> REST APIs and controllers do not store user/session state in memory.</li>
+<li data-marpit-fragment="2"><strong>Session state (if needed):</strong> Use external stores (e.g., Redis, JDBC) via Spring Session.
+<ul>
+<li data-marpit-fragment="3">Our sample app uses Redis for real-time collaboration and can be configured for session storage.</li>
+</ul>
+</li>
+<li data-marpit-fragment="4"><strong>Avoid:</strong> Storing critical data in local memory or on disk—use backing services.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-marpit-fragments="5" data-paginate="true" data-class="factor-slide factor-disposability-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-disposability-slide" data-marpit-pagination="25" style="--paginate:true;--class:factor-slide factor-disposability-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">9</span>Disposability</span>
+  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
+</div>
+<h2 id="fast-startup-graceful-shutdown">Fast Startup, Graceful Shutdown</h2>
+<ul>
+<li data-marpit-fragment="1"><strong>Principle:</strong> Processes are disposable—start and stop quickly, no reliance on local state.</li>
+<li data-marpit-fragment="2"><strong>Why?</strong>
+<ul>
+<li data-marpit-fragment="3">Enables elastic scaling and rapid deployments.</li>
+<li data-marpit-fragment="4">Robustness: failed instances can be replaced instantly.</li>
+<li data-marpit-fragment="5">Supports cloud-native and orchestrated environments.</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-disposability-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-disposability-slide" data-marpit-pagination="26" style="--paginate:true;--class:factor-slide factor-disposability-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">9</span>Disposability</span>
+  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
+</div>
+
+<ul>
+<li data-marpit-fragment="1"><strong>Fast Startup:</strong> Spring Boot optimized for quick startup; Spring Native (GraalVM) for even faster boot.</li>
+<li data-marpit-fragment="2"><strong>Graceful Shutdown:</strong> Actuator <code>/actuator/shutdown</code> endpoint, handles in-flight requests.</li>
+<li data-marpit-fragment="3"><strong>Health Probes:</strong> Actuator <code>/actuator/health</code> for liveness/readiness (Kubernetes, cloud platforms).</li>
+<li data-marpit-fragment="4"><strong>Included in NotesApp App:</strong><pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-marpit-fragments="6" data-paginate="true" data-class="factor-slide factor-dev-prod-parity-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-dev-prod-parity-slide" data-marpit-pagination="27" style="--paginate:true;--class:factor-slide factor-dev-prod-parity-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
+  <span class="factor-bar-title"><span class="factor-number">10</span>Dev/Prod Parity</span>
   <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
 </div>
 <h2 id="keep-environments-similar">Keep Environments Similar</h2>
@@ -318,8 +451,8 @@
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-marpit-fragments="5" data-paginate="true" data-class="factor-slide factor-dev-prod-parity-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-dev-prod-parity-slide code-slide" data-marpit-pagination="20" style="--paginate:true;--class:factor-slide factor-dev-prod-parity-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">X</span>Dev/Prod Parity</span>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-marpit-fragments="5" data-paginate="true" data-class="factor-slide factor-dev-prod-parity-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-dev-prod-parity-slide code-slide" data-marpit-pagination="28" style="--paginate:true;--class:factor-slide factor-dev-prod-parity-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
+  <span class="factor-bar-title"><span class="factor-number">10</span>Dev/Prod Parity</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -341,141 +474,8 @@ docker run --<span class="hljs-built_in">rm</span> -t0 -p 8080:8080 --env-file .
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-marpit-fragments="6" data-paginate="true" data-class="factor-slide factor-secrets-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-secrets-slide" data-marpit-pagination="21" style="--paginate:true;--class:factor-slide factor-secrets-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">III</span>Config: Managing Secrets</span>
-  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
-</div>
-<ul>
-<li data-marpit-fragment="1"><strong>Principle (Factor III – Config):</strong> Never hardcode secrets (API keys, passwords, tokens) in code or config files.</li>
-<li data-marpit-fragment="2"><strong>Externalize all secrets:</strong> Use environment variables or secret management tools.</li>
-<li data-marpit-fragment="3"><strong>Why?</strong>
-<ul>
-<li data-marpit-fragment="4">Prevent accidental exposure (e.g., in source control).</li>
-<li data-marpit-fragment="5">Enable safe rotation and updates.</li>
-<li data-marpit-fragment="6">Meet security and compliance requirements.</li>
-</ul>
-</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-marpit-fragments="5" data-paginate="true" data-class="factor-slide factor-config-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-config-slide code-slide" data-marpit-pagination="22" style="--paginate:true;--class:factor-slide factor-config-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">III</span>Config: Managing Secrets</span>
-  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
-</div>
-<ul>
-<li data-marpit-fragment="1"><strong>Environment Variables:</strong> Primary and simplest method.<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-meta">@Value(&quot;${MY_SECRET_API_KEY}&quot;)</span>
-<span class="hljs-keyword">private</span> String apiKey;
-</code></pre>
-</li>
-<li data-marpit-fragment="2"><strong>External Secret Management Systems:</strong>
-<ul>
-<li data-marpit-fragment="3">Spring Cloud Vault (HashiCorp), AWS Secrets Manager</li>
-</ul>
-</li>
-<li data-marpit-fragment="4"><strong>Encrypted Properties (e.g., Jasypt Spring Boot):</strong>
-<ul>
-<li data-marpit-fragment="5">For encrypting values at rest in properties files.</li>
-</ul>
-</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-marpit-fragments="6" data-paginate="true" data-class="factor-slide factor-processes-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-processes-slide" data-marpit-pagination="23" style="--paginate:true;--class:factor-slide factor-processes-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">VI</span>Processes</span>
-  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
-</div>
-<h2 id="execute-as-stateless-processes">Execute as Stateless Processes</h2>
-<ul>
-<li data-marpit-fragment="1"><strong>Principle:</strong> Run as one or more stateless, independent processes.
-<ul>
-<li data-marpit-fragment="2">&quot;Share-nothing&quot;—no local or shared state.</li>
-<li data-marpit-fragment="3">Persistent data lives in <strong>backing services</strong> (DB, Redis, etc).</li>
-</ul>
-</li>
-<li data-marpit-fragment="4"><strong>Why?</strong>
-<ul>
-<li data-marpit-fragment="5">Enables horizontal scaling.</li>
-<li data-marpit-fragment="6">Improves resilience and recovery.</li>
-</ul>
-</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-processes-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-processes-slide" data-marpit-pagination="24" style="--paginate:true;--class:factor-slide factor-processes-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">VI</span>Process</span>
-  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
-</div>
-
-<ul>
-<li data-marpit-fragment="1"><strong>Stateless by default:</strong> REST APIs and controllers do not store user/session state in memory.</li>
-<li data-marpit-fragment="2"><strong>Session state (if needed):</strong> Use external stores (e.g., Redis, JDBC) via Spring Session.
-<ul>
-<li data-marpit-fragment="3">Our sample app uses Redis for real-time collaboration and can be configured for session storage.</li>
-</ul>
-</li>
-<li data-marpit-fragment="4"><strong>Avoid:</strong> Storing critical data in local memory or on disk—use backing services.</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-marpit-fragments="6" data-paginate="true" data-class="factor-slide factor-build-release-run-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-build-release-run-slide" data-marpit-pagination="25" style="--paginate:true;--class:factor-slide factor-build-release-run-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">V</span>Build, Release, Run</span>
-  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
-</div>
-<h2 id="strict-separation">Strict Separation</h2>
-<ul>
-<li data-marpit-fragment="1"><strong>Build Stage:</strong> Code → Executable artifact (e.g., JAR/WAR). No environment-specific config.</li>
-<li data-marpit-fragment="2"><strong>Release Stage:</strong> Combine build artifact with config for a specific environment.</li>
-<li data-marpit-fragment="3"><strong>Run Stage:</strong> Execute the release in the target environment.</li>
-<li data-marpit-fragment="4"><strong>Why?</strong>
-<ul>
-<li data-marpit-fragment="5">Reliable, repeatable deployments.</li>
-<li data-marpit-fragment="6">Easier rollbacks &amp; debugging and CI/CD.</li>
-</ul>
-</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-marpit-fragments="5" data-paginate="true" data-class="factor-slide factor-build-release-run-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-build-release-run-slide" data-marpit-pagination="26" style="--paginate:true;--class:factor-slide factor-build-release-run-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">V</span>Build, Release, Run</span>
-  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
-</div>
-
-<ul>
-<li data-marpit-fragment="1"><strong>Build:</strong> Use Maven/Gradle to create a JAR/WAR (<code>mvn package</code>).</li>
-<li data-marpit-fragment="2"><strong>Release:</strong> Package artifact in a Docker image (optional), config supplied at runtime.</li>
-<li data-marpit-fragment="3"><strong>Run:</strong> Deploy the same artifact to any environment (dev, staging, prod).</li>
-<li data-marpit-fragment="4"><strong>CI/CD:</strong> Automate with GitHub Actions, Jenkins, etc.</li>
-<li data-marpit-fragment="5"><strong>Sample App:</strong> Build with Maven, config injected at run time, deploy anywhere.</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-marpit-fragments="5" data-paginate="true" data-class="factor-slide factor-disposability-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-disposability-slide" data-marpit-pagination="27" style="--paginate:true;--class:factor-slide factor-disposability-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">IX</span>Disposability</span>
-  <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
-</div>
-<h2 id="fast-startup-graceful-shutdown">Fast Startup, Graceful Shutdown</h2>
-<ul>
-<li data-marpit-fragment="1"><strong>Principle:</strong> Processes are disposable—start and stop quickly, no reliance on local state.</li>
-<li data-marpit-fragment="2"><strong>Why?</strong>
-<ul>
-<li data-marpit-fragment="3">Enables elastic scaling and rapid deployments.</li>
-<li data-marpit-fragment="4">Robustness: failed instances can be replaced instantly.</li>
-<li data-marpit-fragment="5">Supports cloud-native and orchestrated environments.</li>
-</ul>
-</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-disposability-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-disposability-slide" data-marpit-pagination="28" style="--paginate:true;--class:factor-slide factor-disposability-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">IX</span>Disposability</span>
-  <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
-</div>
-
-<ul>
-<li data-marpit-fragment="1"><strong>Fast Startup:</strong> Spring Boot optimized for quick startup; Spring Native (GraalVM) for even faster boot.</li>
-<li data-marpit-fragment="2"><strong>Graceful Shutdown:</strong> Actuator <code>/actuator/shutdown</code> endpoint, handles in-flight requests.</li>
-<li data-marpit-fragment="3"><strong>Health Probes:</strong> Actuator <code>/actuator/health</code> for liveness/readiness (Kubernetes, cloud platforms).</li>
-<li data-marpit-fragment="4"><strong>Used NotesApp App:</strong><pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-</code></pre>
-</li>
-</ul>
-</section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-logs-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-logs-slide" data-marpit-pagination="29" style="--paginate:true;--class:factor-slide factor-logs-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar">
-  <span class="factor-bar-title"><span class="factor-number">XI</span>Logs</span>
+  <span class="factor-bar-title"><span class="factor-number">11</span>Logs</span>
   <img class="factor-bar-logo" src="images/slide11_12factor_logo.png" alt="12-Factor Logo" />
 </div>
 <h2 id="treat-as-event-streams">Treat as Event Streams</h2>
@@ -487,7 +487,7 @@ docker run --<span class="hljs-built_in">rm</span> -t0 -p 8080:8080 --env-file .
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-marpit-fragments="4" data-paginate="true" data-class="factor-slide factor-logs-slide code-slide" data-theme="gaia" lang="en-US" class="factor-slide factor-logs-slide code-slide" data-marpit-pagination="30" style="--paginate:true;--class:factor-slide factor-logs-slide code-slide;--theme:gaia;" data-marpit-pagination-total="34"><div class="factor-bar spring">
-  <span class="factor-bar-title"><span class="factor-number">XI</span>Logs</span>
+  <span class="factor-bar-title"><span class="factor-number">11</span>Logs</span>
   <img class="factor-bar-logo" src="images/slide11_spring_boot_logo.svg" alt="Spring Boot Logo" />
 </div>
 
@@ -661,6 +661,16 @@ And that's exactly what we're going to explore in more detail – *how* Spring B
 &quot;Finally, for more complex scenarios, especially in distributed systems, there's **Spring Cloud Config**. This provides a server that externalizes configuration for applications across all environments. It's typically backed by a Git repository, allowing for version-controlled configuration that can be updated dynamically and accessed by many microservices. We won't dive deep into this today, but it's a powerful option for larger systems needing centralized configuration management.&quot;
 
 &quot;The key takeaway is that Spring Boot provides a clear hierarchy and multiple mechanisms to consume configuration from the environment, aligning perfectly with Factor III.&quot;</p></div><div class="bespoke-marp-note" data-index="13" tabindex="0"><p>Speaker Notes:
+&quot;This guidance comes directly from Factor III—Config—of the Twelve-Factor methodology, which states that all configuration, including secrets, must be stored outside the codebase, typically in environment variables.
+
+The rationale is to prevent accidental exposure, enable safe rotation, and meet security and compliance needs. In our sample app, all sensitive values are injected from the environment, never stored in code or checked-in config files.&quot;</p></div><div class="bespoke-marp-note" data-index="14" tabindex="0"><p>Speaker Notes:
+&quot;Spring Boot makes it easy to follow the Twelve-Factor principle for secrets. The most direct approach is to use environment variables, which Spring can inject into your code using the `@Value` annotation. In the example shown, the value of `MY_SECRET_API_KEY` is injected from the environment or config into the `apiKey` field. This keeps secrets out of your codebase and allows for easy rotation and management.&quot;
+
+&quot;For more advanced needs, Spring Boot integrates with secret management systems like HashiCorp Vault, AWS Secrets Manager, and Azure Key Vault—often via Spring Cloud extensions. These tools provide secure storage, access control, and auditability for secrets.&quot;
+
+&quot;If you must store secrets in properties files, libraries like Jasypt allow you to encrypt those values at rest, but environment variables or secret managers are preferred.&quot;
+
+&quot;In our sample app, all sensitive values are injected from the environment, never hardcoded or checked into source control, fully aligning with Factor III of the Twelve-Factor methodology.&quot;</p></div><div class="bespoke-marp-note" data-index="15" tabindex="0"><p>Speaker Notes:
 &quot;Next, let's look at Factor IV: Backing Services.&quot;
 &quot;According to `12factor.net`, a backing service is any service your application consumes over the network. This includes obvious examples like datastores (PostgreSQL, MongoDB), messaging systems (RabbitMQ, Kafka), and caching systems (Redis), but also extends to things like email services or even other internal applications exposed via APIs.&quot;
 &quot;The core principle here is that your application code should make **no distinction between local and third-party services**. Whether your database is running on your local machine for development or is a managed service in the cloud, your application treats it simply as an 'attached resource'.&quot;
@@ -668,28 +678,74 @@ And that's exactly what we're going to explore in more detail – *how* Spring B
 &quot;The benefits of this approach are significant:&quot;
 &quot;First, **Loose Coupling and Portability**. Because the application doesn't care *where* the service is, only *how to connect to it* (via config), you can swap services with incredible ease. For example, you could switch from a local MySQL database during development to a cloud-hosted Amazon RDS instance in production simply by changing a configuration variable. No code changes are needed.&quot;
 &quot;This also leads to **Flexibility** for system administrators. They can attach new resources, detach old ones, or scale existing backing services (like upgrading a database plan) without any need to modify or redeploy the application code itself.&quot;
-&quot;Our Twelve-Factor Notepad app, for instance, uses a PostgreSQL database and a Redis instance. Both are configured via environment variables, allowing us to use local instances during development and cloud-managed services in production, all without changing the application's core logic. We'll see how Spring Boot helps manage these connections on the next slide.&quot;</p></div><div class="bespoke-marp-note" data-index="14" tabindex="0"><p>&quot;So, how does Spring Boot help us treat backing services as attached resources, as per Factor IV? Let's start with one of its most powerful features: Auto-configuration.&quot;
+&quot;Our Twelve-Factor Notepad app, for instance, uses a PostgreSQL database and a Redis instance. Both are configured via environment variables, allowing us to use local instances during development and cloud-managed services in production, all without changing the application's core logic. We'll see how Spring Boot helps manage these connections on the next slide.&quot;</p></div><div class="bespoke-marp-note" data-index="16" tabindex="0"><p>&quot;So, how does Spring Boot help us treat backing services as attached resources, as per Factor IV? Let's start with one of its most powerful features: Auto-configuration.&quot;
 
 &quot;Primarily through its **Auto-configuration Magic**. If Spring Boot detects, for example, the PostgreSQL driver and Spring Data JPA on the classpath (as we've included in our `pom.xml` here), it will automatically configure a `DataSource`, an `EntityManagerFactory`, and other necessary beans for database interaction. The same principle applies if it finds the Redis starter – it sets up what's needed to connect to a Redis instance. All you typically need to do is add the starter dependency to your `pom.xml` or `build.gradle`.&quot;
 
-&quot;This significantly reduces boilerplate and gets you connected to your backing services quickly. Next, we'll see how we tell Spring Boot *where* these services are.&quot;</p></div><div class="bespoke-marp-note" data-index="15" tabindex="0"><p>&quot;This slide demonstrates how Spring Boot lets us externalize connection details for backing services using environment variables. By default, Spring Boot will automatically pick up standard environment variables like SPRING_DATASOURCE_URL and SPRING_REDIS_URL—even if they're not referenced in your application.properties file.&quot;
+&quot;This significantly reduces boilerplate and gets you connected to your backing services quickly. Next, we'll see how we tell Spring Boot *where* these services are.&quot;</p></div><div class="bespoke-marp-note" data-index="17" tabindex="0"><p>&quot;This slide demonstrates how Spring Boot lets us externalize connection details for backing services using environment variables. By default, Spring Boot will automatically pick up standard environment variables like SPRING_DATASOURCE_URL and SPRING_REDIS_URL—even if they're not referenced in your application.properties file.&quot;
 
 &quot;But, if you want to use a different environment variable name, or support multiple data sources, you can explicitly reference any variable you like in your config file. For example, here we use ${OTHER_DATASOURCE_URL} and ${OTHER_REDIS_URL}. This gives you flexibility to adapt to different deployment environments or naming conventions.&quot;
 
 &quot;This approach directly supports both Factor III (Config) and Factor IV (Backing Services) from the Twelve-Factor methodology. It allows you to swap out services or credentials without code changes, and is supported by platforms like Heroku, AWS, and Kubernetes, which inject these variables at runtime.&quot;
 
-&quot;Finally, by never committing real credentials to source control and always supplying secrets via environment variables, you improve security and make it easier to rotate credentials as needed.&quot;</p></div><div class="bespoke-marp-note" data-index="16" tabindex="0"><p>Speaker Notes:
+&quot;Finally, by never committing real credentials to source control and always supplying secrets via environment variables, you improve security and make it easier to rotate credentials as needed.&quot;</p></div><div class="bespoke-marp-note" data-index="18" tabindex="0"><p>Speaker Notes:
 &quot;**Spring Data** further simplifies interaction with backing services by providing consistent, high-level abstractions.&quot;
 
 &quot;For relational databases, Spring Data JPA allows you to define a repository interface, like our `NoteRepository` here, by simply extending `JpaRepository`. Spring Data then automatically implements common CRUD operations (Create, Read, Update, Delete) for your `Note` entity. You only need to define methods for more complex custom queries.&quot;
 
-&quot;Similarly, for services like Redis, Spring Data Redis offers `RedisTemplate` for direct operations or repository-style abstractions, making it easier to work with your data store without getting bogged down in low-level connection and data handling code.&quot;</p></div><div class="bespoke-marp-note" data-index="17" tabindex="0"><p>&quot;Finally, a crucial aspect of using backing services, especially databases, is **Connection Pooling**. Opening and closing database connections is expensive.&quot;
+&quot;Similarly, for services like Redis, Spring Data Redis offers `RedisTemplate` for direct operations or repository-style abstractions, making it easier to work with your data store without getting bogged down in low-level connection and data handling code.&quot;</p></div><div class="bespoke-marp-note" data-index="19" tabindex="0"><p>&quot;Finally, a crucial aspect of using backing services, especially databases, is **Connection Pooling**. Opening and closing database connections is expensive.&quot;
 
 &quot;Spring Boot handles this automatically for JDBC connections. It defaults to **HikariCP**, which is a very fast and efficient connection pool. This means your application will maintain a pool of ready-to-use database connections, significantly improving performance by avoiding the overhead of establishing a new connection for every database interaction.&quot;
 
 &quot;In most cases, you don't need to configure anything manually; Spring Boot's defaults for HikariCP are sensible. However, if you need to fine-tune aspects like the maximum pool size or connection timeout, you can do so through properties in your `application.properties` file.&quot;
 
-&quot;So, in essence, Spring Boot's auto-configuration, robust support for externalized configuration, high-level abstractions like Spring Data, and automatic connection pooling make adhering to the 'Backing Services as Attached Resources' principle incredibly straightforward.&quot;</p></div><div class="bespoke-marp-note" data-index="18" tabindex="0"><p>&quot;We now arrive at Factor X: Dev/Prod Parity. The guiding principle here, directly from `12factor.net`, is to 'Keep development, staging, and production as similar as possible.'&quot;
+&quot;So, in essence, Spring Boot's auto-configuration, robust support for externalized configuration, high-level abstractions like Spring Data, and automatic connection pooling make adhering to the 'Backing Services as Attached Resources' principle incredibly straightforward.&quot;</p></div><div class="bespoke-marp-note" data-index="20" tabindex="0"><p>Speaker Notes:
+&quot;The Build, Release, Run principle requires a strict separation between these three stages. The build stage produces a deployable artifact from your code, with no environment-specific configuration baked in.
+
+The release stage combines this artifact with the configuration for a specific environment—such as database URLs or API keys—creating a unique release.
+
+The run stage is where the release is executed in the target environment, using the injected config.
+
+This separation ensures that builds are repeatable and reliable, and that you can promote the same artifact through multiple environments (dev, staging, prod) simply by changing the config. It also makes rollbacks and debugging much easier.
+
+In our sample app, we use Maven to build a JAR, inject config at release/run time, and can deploy the same artifact to any environment, fully aligned with this principle.&quot;</p></div><div class="bespoke-marp-note" data-index="21" tabindex="0"><p>Speaker Notes:
+&quot;Spring Boot makes it easy to follow the Build, Release, Run principle. We use Maven or Gradle to build a deployable JAR or WAR file, with no environment-specific config included.
+
+For the release stage, we can package this artifact in a Docker image, or simply deploy the JAR as-is. Configuration—such as database URLs or API keys—is always supplied at runtime, never baked into the build.
+
+The run stage is where we execute the release in the target environment, using the injected config. This means we can promote the same artifact through dev, staging, and production, ensuring consistency and reliability.
+
+Our sample app uses Maven for builds, can be containerized with Docker, and receives its config at runtime, so it can be deployed to any environment with confidence. CI/CD pipelines like GitHub Actions or Jenkins automate these steps for repeatable, hands-off deployments.&quot;</p></div><div class="bespoke-marp-note" data-index="22" tabindex="0"><p>Speaker Notes:
+&quot;The 'Processes' factor in the Twelve-Factor methodology emphasizes that applications should run as one or more stateless processes. This means each process is independent and does not rely on shared memory or local state.
+
+Any data that needs to persist—such as user sessions, files, or application state—should be stored in a backing service like a database or cache, not in the process itself.
+
+This approach enables true horizontal scalability: you can add or remove instances at will, and the system remains robust because no single process is critical for holding state. If a process fails, it can be replaced instantly without data loss.
+
+In our sample app, all persistent data (notes, sessions) is stored in backing services, so any app instance can be started, stopped, or replaced at any time.&quot;</p></div><div class="bespoke-marp-note" data-index="23" tabindex="0"><p>Speaker Notes:
+&quot;Spring Boot applications are generally stateless by design, especially when building REST APIs. This means each request is handled independently, and no user or session state is kept in memory between requests.
+
+When session state is required—for example, for user authentication or collaborative features—Spring Boot makes it easy to externalize that state using Spring Session. In our sample app, Redis is used for real-time collaboration and can also be configured to store session data, ensuring that all state is managed outside the application process.
+
+This approach allows you to scale your app horizontally, add or remove instances at will, and recover quickly from failures, since no critical data is lost if a process is restarted or replaced.
+
+The key takeaway: always use backing services for persistent or shared state, never rely on in-memory or local storage.&quot;</p></div><div class="bespoke-marp-note" data-index="24" tabindex="0"><p>Speaker Notes:
+&quot;The Disposability principle means that application processes should be able to start up and shut down quickly and gracefully, without relying on any local state.
+
+This is essential for modern cloud-native environments, where applications are frequently scaled up or down, restarted, or replaced by orchestrators like Kubernetes.
+
+Fast startup and graceful shutdown enable rapid deployments, elastic scaling, and robust recovery from failures. If a process crashes or needs to be replaced, it can be done instantly, with no risk of data loss or inconsistent state.
+
+In our sample app, we ensure that all state is stored in backing services, so any instance can be started, stopped, or replaced at any time, fully aligned with this principle.&quot;</p></div><div class="bespoke-marp-note" data-index="25" tabindex="0"><p>Speaker Notes:
+&quot;Spring Boot provides several features that make applications highly disposable. Fast startup is a core design goal, and with Spring Native and GraalVM, you can achieve even faster boot times for cloud-native deployments.
+
+Graceful shutdown is supported out of the box via the Actuator `/actuator/shutdown` endpoint, which ensures that in-flight requests are handled before the process exits.
+
+Health probes, such as `/actuator/health`, are essential for orchestrators like Kubernetes to determine when an app is ready to receive traffic or needs to be restarted.
+
+Enabling Actuator in your Spring Boot app is as simple as adding the `spring-boot-starter-actuator` dependency to your `pom.xml` and exposing the relevant endpoints in your `application.properties` file, as shown here.
+
+In our sample app, Actuator is enabled, making it easy to integrate with cloud platforms and orchestrators, and ensuring that any instance can be started, stopped, or replaced at any time.&quot;</p></div><div class="bespoke-marp-note" data-index="26" tabindex="0"><p>&quot;We now arrive at Factor X: Dev/Prod Parity. The guiding principle here, directly from `12factor.net`, is to 'Keep development, staging, and production as similar as possible.'&quot;
 
 &quot;Historically, significant gaps existed between how a developer worked locally and how the application ran in production. The Twelve-Factor App methodology aims to shrink these gaps to facilitate **continuous deployment**.&quot;
 
@@ -706,7 +762,7 @@ And that's exactly what we're going to explore in more detail – *how* Spring B
 
 &quot;Modern tools like containerization (Docker), virtual environments (Vagrant), and sophisticated packaging systems make achieving this parity far more feasible than it once was. The goal is to make your development environment a near-perfect replica of production.&quot;
 
-&quot;On the next slide, we'll see how Spring Boot helps us achieve this parity.&quot;</p></div><div class="bespoke-marp-note" data-index="19" tabindex="0"><p>Speaker Notes:
+&quot;On the next slide, we'll see how Spring Boot helps us achieve this parity.&quot;</p></div><div class="bespoke-marp-note" data-index="27" tabindex="0"><p>Speaker Notes:
 &quot;So, how does Spring Boot help us achieve Dev/Prod Parity, as outlined in Factor X?&quot;
 
 &quot;First, **Spring Profiles** are a cornerstone. By using `application-{profile}.properties` or YAML files, we can define distinct configurations for different environments like 'dev', 'test', or 'prod'. This allows us to easily switch settings – such as server ports, logging levels, or even which beans are active – simply by activating a different profile. For example, our `application-dev.properties` might set a debug logging level and a specific port, while `application-prod.properties` uses a different port and expects crucial settings like database URLs to be injected from the environment, perfectly aligning with Factor III for configuration.&quot;
@@ -717,63 +773,7 @@ And that's exactly what we're going to explore in more detail – *how* Spring B
 
 &quot;Finally, **Spring Boot Test** provides comprehensive testing utilities that encourage writing tests that run in an environment closely resembling production. You can easily load specific Spring profiles for your tests, mock backing services, or even spin up test containers for true integration testing against real database versions, further reducing the gap between your testing environment and production.&quot;
 
-&quot;By leveraging these features, Spring Boot significantly simplifies the task of keeping your development and production environments as similar as possible, which is key for building reliable, continuously deployable applications.&quot;</p></div><div class="bespoke-marp-note" data-index="20" tabindex="0"><p>Speaker Notes:
-&quot;This guidance comes directly from Factor III—Config—of the Twelve-Factor methodology, which states that all configuration, including secrets, must be stored outside the codebase, typically in environment variables.
-
-The rationale is to prevent accidental exposure, enable safe rotation, and meet security and compliance needs. In our sample app, all sensitive values are injected from the environment, never stored in code or checked-in config files.&quot;</p></div><div class="bespoke-marp-note" data-index="21" tabindex="0"><p>Speaker Notes:
-&quot;Spring Boot makes it easy to follow the Twelve-Factor principle for secrets. The most direct approach is to use environment variables, which Spring can inject into your code using the `@Value` annotation. In the example shown, the value of `MY_SECRET_API_KEY` is injected from the environment or config into the `apiKey` field. This keeps secrets out of your codebase and allows for easy rotation and management.&quot;
-
-&quot;For more advanced needs, Spring Boot integrates with secret management systems like HashiCorp Vault, AWS Secrets Manager, and Azure Key Vault—often via Spring Cloud extensions. These tools provide secure storage, access control, and auditability for secrets.&quot;
-
-&quot;If you must store secrets in properties files, libraries like Jasypt allow you to encrypt those values at rest, but environment variables or secret managers are preferred.&quot;
-
-&quot;In our sample app, all sensitive values are injected from the environment, never hardcoded or checked into source control, fully aligning with Factor III of the Twelve-Factor methodology.&quot;</p></div><div class="bespoke-marp-note" data-index="22" tabindex="0"><p>Speaker Notes:
-&quot;The 'Processes' factor in the Twelve-Factor methodology emphasizes that applications should run as one or more stateless processes. This means each process is independent and does not rely on shared memory or local state.
-
-Any data that needs to persist—such as user sessions, files, or application state—should be stored in a backing service like a database or cache, not in the process itself.
-
-This approach enables true horizontal scalability: you can add or remove instances at will, and the system remains robust because no single process is critical for holding state. If a process fails, it can be replaced instantly without data loss.
-
-In our sample app, all persistent data (notes, sessions) is stored in backing services, so any app instance can be started, stopped, or replaced at any time.&quot;</p></div><div class="bespoke-marp-note" data-index="23" tabindex="0"><p>Speaker Notes:
-&quot;Spring Boot applications are generally stateless by design, especially when building REST APIs. This means each request is handled independently, and no user or session state is kept in memory between requests.
-
-When session state is required—for example, for user authentication or collaborative features—Spring Boot makes it easy to externalize that state using Spring Session. In our sample app, Redis is used for real-time collaboration and can also be configured to store session data, ensuring that all state is managed outside the application process.
-
-This approach allows you to scale your app horizontally, add or remove instances at will, and recover quickly from failures, since no critical data is lost if a process is restarted or replaced.
-
-The key takeaway: always use backing services for persistent or shared state, never rely on in-memory or local storage.&quot;</p></div><div class="bespoke-marp-note" data-index="24" tabindex="0"><p>Speaker Notes:
-&quot;The Build, Release, Run principle requires a strict separation between these three stages. The build stage produces a deployable artifact from your code, with no environment-specific configuration baked in.
-
-The release stage combines this artifact with the configuration for a specific environment—such as database URLs or API keys—creating a unique release.
-
-The run stage is where the release is executed in the target environment, using the injected config.
-
-This separation ensures that builds are repeatable and reliable, and that you can promote the same artifact through multiple environments (dev, staging, prod) simply by changing the config. It also makes rollbacks and debugging much easier.
-
-In our sample app, we use Maven to build a JAR, inject config at release/run time, and can deploy the same artifact to any environment, fully aligned with this principle.&quot;</p></div><div class="bespoke-marp-note" data-index="25" tabindex="0"><p>Speaker Notes:
-&quot;Spring Boot makes it easy to follow the Build, Release, Run principle. We use Maven or Gradle to build a deployable JAR or WAR file, with no environment-specific config included.
-
-For the release stage, we can package this artifact in a Docker image, or simply deploy the JAR as-is. Configuration—such as database URLs or API keys—is always supplied at runtime, never baked into the build.
-
-The run stage is where we execute the release in the target environment, using the injected config. This means we can promote the same artifact through dev, staging, and production, ensuring consistency and reliability.
-
-Our sample app uses Maven for builds, can be containerized with Docker, and receives its config at runtime, so it can be deployed to any environment with confidence. CI/CD pipelines like GitHub Actions or Jenkins automate these steps for repeatable, hands-off deployments.&quot;</p></div><div class="bespoke-marp-note" data-index="26" tabindex="0"><p>Speaker Notes:
-&quot;The Disposability principle means that application processes should be able to start up and shut down quickly and gracefully, without relying on any local state.
-
-This is essential for modern cloud-native environments, where applications are frequently scaled up or down, restarted, or replaced by orchestrators like Kubernetes.
-
-Fast startup and graceful shutdown enable rapid deployments, elastic scaling, and robust recovery from failures. If a process crashes or needs to be replaced, it can be done instantly, with no risk of data loss or inconsistent state.
-
-In our sample app, we ensure that all state is stored in backing services, so any instance can be started, stopped, or replaced at any time, fully aligned with this principle.&quot;</p></div><div class="bespoke-marp-note" data-index="27" tabindex="0"><p>Speaker Notes:
-&quot;Spring Boot provides several features that make applications highly disposable. Fast startup is a core design goal, and with Spring Native and GraalVM, you can achieve even faster boot times for cloud-native deployments.
-
-Graceful shutdown is supported out of the box via the Actuator `/actuator/shutdown` endpoint, which ensures that in-flight requests are handled before the process exits.
-
-Health probes, such as `/actuator/health`, are essential for orchestrators like Kubernetes to determine when an app is ready to receive traffic or needs to be restarted.
-
-Enabling Actuator in your Spring Boot app is as simple as adding the `spring-boot-starter-actuator` dependency to your `pom.xml` and exposing the relevant endpoints in your `application.properties` file, as shown here.
-
-In our sample app, Actuator is enabled, making it easy to integrate with cloud platforms and orchestrators, and ensuring that any instance can be started, stopped, or replaced at any time.&quot;</p></div><div class="bespoke-marp-note" data-index="28" tabindex="0"><p>Speaker Notes:
+&quot;By leveraging these features, Spring Boot significantly simplifies the task of keeping your development and production environments as similar as possible, which is key for building reliable, continuously deployable applications.&quot;</p></div><div class="bespoke-marp-note" data-index="28" tabindex="0"><p>Speaker Notes:
 &quot;The Eleventh Factor, **Logs**, is all about treating logs as event streams. According to [12factor.net](https://12factor.net/logs), your application should never attempt to manage log files or concern itself with log storage or routing.
 
 Instead, the app simply writes its event stream—typically as lines of text—to standard output (`stdout`). This approach decouples the application from any particular log management solution, making it portable and cloud-native.
