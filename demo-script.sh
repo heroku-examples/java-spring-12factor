@@ -5,11 +5,10 @@
 # Demo 2 - Build, Release, Run
 heroku create
 heroku addons:create heroku-postgresql:essential-2 && heroku addons:create heroku-redis:mini
-git push heroku main 
-heroku ps:type web=standard-1x && heroku ps:scale web=2
-heroku open
 
 # Demo 3 - Test Stateless Services and External Backing Services
+git push heroku main 
+heroku ps:type web=standard-1x && heroku ps:scale web=2
 heroku info
 # /api/session/test observe host id value and session counter
 heroku open
