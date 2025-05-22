@@ -89,7 +89,8 @@ Explore these resources to learn more about the Twelve-Factor App methodology, S
 *   **The Twelve-Factor App:** [12factor.net](https://12factor.net/)
 *   **Spring Boot Guides:** [spring.io/guides](https://spring.io/guides/)
 *   **Spring Cloud Documentation:** [spring.io/projects/spring-cloud](https://spring.io/projects/spring-cloud)
-*   **Heroku's Twelve-Factor Repository:** [github.com/heroku/12factor](https://github.com/heroku/12factor)
+*   **Twelve-Factor Repository:** [github.com/heroku/12factor](https://github.com/heroku/12factor)
+*   **[Simplifying JVM App Development with Heroku’s Buildpack Magic](https://www.heroku.com/blog/simplifying-jvm-app-development-herokus-buildpack-magic/)**
 *   **Heroku Platform:** [heroku.com](https://www.heroku.com/) (for deploying applications)
 
 If you have questions or suggestions regarding this sample application, please open an issue or pull request!
