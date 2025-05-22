@@ -1,7 +1,6 @@
 package com.twelvefactor.examples.twelvefactornotepad.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.twelvefactor.examples.twelvefactornotepad.service.RedisMessageSubscriber;
 import io.lettuce.core.resource.ClientResources;
 import io.lettuce.core.resource.DefaultClientResources;
 import java.net.URI;
