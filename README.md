@@ -2,7 +2,11 @@
 
 This is a Spring Boot application demonstrating the Twelve-Factor App methodology.
 
-Open `presentation.html` to review the presentation and slide notes.
+To view the presentation click [here](https://heroku-examples.github.io/java-spring-12factor/presentation.html?f=4#6). 
+
+If you downlaod the repo open `presentation.html`.
+
+In either case you can also review slide notes for more information.
 
 <img src="images/slide8_notepad_screenshot.png" width="70%" alt="Index">
 
